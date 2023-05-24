@@ -9,7 +9,8 @@ import { NgxCSVParserError, NgxCsvParser } from 'ngx-csv-parser';
 export class AppComponent {
   title = 'csv-parser';
   csvRecords: any;
-  header: boolean = false;
+  user: any;
+  header: boolean = true;
 
   constructor(private ngxCsvParser: NgxCsvParser) {
   }
@@ -19,7 +20,6 @@ export class AppComponent {
   fileChangeListener($event: any): void {
 
     const files = $event.srcElement.files;
-    this.header = (this.header as unknown as string) === 'true' || this.header === true;
 
     this.ngxCsvParser.parse(files[0],
           {

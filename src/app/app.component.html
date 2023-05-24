@@ -1,16 +1,8 @@
-<h1>NgxCSVParser by <a href="https://DevelopersHive.com">Developers Hive</a></h1>
+<h1>Spike: Librería NgxCsvParser</h1>
 <div class="csv-file-chooser-section">
 
   <input type="file" #fileImportInput name="File Upload" id="csvFileUpload" (change)="fileChangeListener($event)"
     accept=".csv" />
-
-  <label>
-    Parse Headers?
-  </label>
-  <select aria-placeholder="Parse headers?" [(ngModel)]="header">
-    <option [value]="true">Yes</option>
-    <option [value]="false">No</option>
-  </select>
 </div>
 
 <div class="csv-result-table">
@@ -21,12 +13,15 @@
         <th>#</th>
         <th>Nombre</th>
         <th>Apellido</th>
-        <th>Edad</th>
         <th>Email</th>
+        <th>Area</th>
+        <th>Grupo</th>
+        <th>Gestion</th>
+        <th>Ciudad</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let csvData of csvRecords;let i = index;">
+      <tr *ngFor="let csvData of csvRecords; let i = index;">
 
         <td>{{i+1}}</td>
         <td>
@@ -36,14 +31,25 @@
           <span>{{csvData.Apellido}}</span>
         </td>
         <td>
-          <span>{{csvData.Edad}}</span>
+          <span>{{csvData.Email}}</span>
         </td>
         <td>
-          <span>{{csvData.Email}}</span>
+          <span>{{csvData.Area}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Grupo}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Gestion}}</span>
+        </td>
+        <td>
+          <span>{{csvData.Ciudad}}</span>
         </td>
 
       </tr>
     </tbody>
   </table>
-
 </div>
+
+
+
